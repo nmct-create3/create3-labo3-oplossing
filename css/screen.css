@@ -761,10 +761,10 @@ more padding on the right to avoid overlap
 }
 
 /* input password with floating label */
-
+/* 
 .c-input--with-floating-label:focus {
     box-shadow: 0 0 0 1px var(--global-input-focus-borderColor);
-}
+} */
 
 /* option input for checkboxes and radio buttons */
 
@@ -802,12 +802,13 @@ more padding on the right to avoid overlap
 
 .c-label--floating {
     position: absolute;
-    top: calc(var(--global-baseline) * 2);
+    top: calc(var(--global-baseline) * 1.5);
     left: var(--global-whitespace-sm);
-    padding: 0  var(--global-whitespace-sm);
+    padding: var(--global-whitespace-xs)  var(--global-whitespace-sm);
     background-color: var(--label--floating-backgroundColor, var(--global-input-backgroundColor));
     transition: transform var(--global-transitionDuration-alpha) var(--global-transitionEasing-out);
     z-index: 1;
+    border-radius: var(--global-borderRadius);
 }
 
 .is-floating,
@@ -816,9 +817,9 @@ more padding on the right to avoid overlap
 }
 
 @media (prefers-color-scheme: dark) {
-    .c-label--floating {
+    /* .c-label--floating {
         --label--floating-backgroundColor: transparent;
-    }
+    } */
 }
 
 /*
@@ -1337,6 +1338,22 @@ more padding on the right to avoid overlap
         --icon__path-color-1: var(--global-color-alpha-dark);
         --icon__path-color-2: white;
     }
+}
+
+/* Like button */
+
+.c-like__symbol {
+	position: relative;
+	width: 24px;
+	fill: var( --global-color-neutral-x-light );
+	transform: scale(1);
+	transition: transform .5s cubic-bezier(0.175, 0.885, 0.32, 2.275);
+	will-change: transform;
+}
+
+.c-like__input:checked + .c-like__label .c-like__symbol {
+	transform: scale(1.1);
+	fill: #D80027;
 }
 
 /*------------------------------------*\
