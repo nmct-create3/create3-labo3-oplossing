@@ -12,7 +12,21 @@ function handleFloatingLabel() {
     });
 }
 
+function handlePasswordSwitcher() {
+    let passwordInput = document.querySelector('.js-password-input'),
+        passwordCheckbox = document.querySelector('.js-password-toggle-checkbox');
+
+    passwordCheckbox.addEventListener('click', function () {
+        if (passwordInput.type == 'password') {
+            passwordInput.type = 'input';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Script loaded!');
     handleFloatingLabel();
+    handlePasswordSwitcher();
 });
