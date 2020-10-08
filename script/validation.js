@@ -109,7 +109,7 @@ const enableListeners = function() {
 
 			addErrors(email);
 
-			// Gebruik een named function (doubleCheckPassword), om die er weer af te kunnen halen. Dit vermijd ook het dubbel toevoegen ervan.
+			// Gebruik een named function (doubleCheckPassword), om die er weer af te kunnen halen. Dit vermijdt ook het dubbel toevoegen ervan.
 			email.input.addEventListener('input', doubleCheckEmailAddress);
 		}
 	});
@@ -122,7 +122,7 @@ const enableListeners = function() {
 
 			addErrors(password);
 
-			// Gebruik een named function (doubleCheckPassword), om die er weer af te kunnen halen. Dit vermijd ook het dubbel toevoegen ervan.
+			// Gebruik een named function (doubleCheckPassword), om die er weer af te kunnen halen. Dit vermijdt ook het dubbel toevoegen ervan.
 			password.input.addEventListener('input', doubleCheckPassword);
 		}
 	});
