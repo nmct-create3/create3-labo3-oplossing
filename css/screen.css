@@ -59,7 +59,7 @@
     --global-transitionDuration-gamma: .3s;
 
 
-     /* Baseline settings */
+    /* Baseline settings */
     --global-baseline: 8px;         
     --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
 
@@ -77,10 +77,10 @@
     --global-input-color: var(--global-color-neutral-xxxx-dark);
     --global-input-borderColor: var(--global-color-neutral-xxx-light);
     --global-input-hover-borderColor: var(--global-color-neutral-xx-light);
-    --global-input-focus-borderColor: var(--global-color-alpha);
-    --global-input-error-borderColor: var(--global-color-error);
+    --global-input-focus-borderColor: var(--global-color-alpha);    
     --global-input-focus-boxShadowSpread: 0 0 0 3px;
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
+    --global-input-error-borderColor: var(--global-color-error);
     --global-input-error-boxShadowColor: var(--global-color-error-x-transparent);
 }
 
@@ -97,6 +97,7 @@
         --global-input-hover-borderColor: var(--global-input-backgroundColor);
         --global-input-focus-borderColor: var(--global-input-backgroundColor);
         --global-input-focus-boxShadowColor: var(--global-color-alpha-transparent);
+        --global-input-error-borderColor: var(--global-input-backgroundColor);
         --global-input-error-boxShadowColor: var(--global-color-error-transparent);
     }
 }
@@ -282,7 +283,7 @@ select {
 }
 
 input::placeholder {
-    color: var(--global-placeholder-color);
+    color: var(--input-placeholder-color, var(--global-placeholder-color));
 }
 
 /*------------------------------------*\
@@ -732,7 +733,7 @@ input::placeholder {
     border-radius: var(--input-borderRadius, var(--global-borderRadius));
     border: var(--input-borderWidth, var(--global-borderWidth)) solid var(--input-borderColor, var(--global-input-borderColor));
     background-color: var(--input-backgroundColor, var(--global-input-backgroundColor));
-    color: var(--global-input-color);
+    color: var(--input-color, var(--global-input-color));
     font-family: inherit;
     font-size: 16px;
     line-height: calc(var(--global-baseline) * 3);
@@ -954,7 +955,7 @@ more padding on the right to avoid overlap
 
 /* focused and active state */
 
-.c-option--hidden:focus + .c-custom-option,
+.c-option--hidden:focus-visible + .c-custom-option,
 .c-option--hidden:active + .c-custom-option {
     --custom-option-borderColor: var(--custom-option-focus-borderColor);
     --custom-option-boxShadow: var(--custom-option-focus-boxShadow);
@@ -1037,7 +1038,7 @@ more padding on the right to avoid overlap
 
 /* focused and active state */
 
-.c-option--hidden:focus + .c-custom-toggle,
+.c-option--hidden:focus-visible + .c-custom-toggle,
 .c-option--hidden:active + .c-custom-toggle {
     --toggle-borderColor: var(--toggle-focus-borderColor);
     --toggle-boxShadow: var(--toggle-focus-boxShadow);
@@ -1362,6 +1363,8 @@ more padding on the right to avoid overlap
 
 .has-error {
     --label-color: var(--global-color-error);
+    --input-color: var(--global-color-error);
+    --input-placeholder-color: var(--global-color-error-transparent);
     --input-borderColor: var(--global-input-error-borderColor);
     --input-hover-borderColor: var(--global-input-error-borderColor);
     --input-focus-borderColor: var(--global-input-error-borderColor);
