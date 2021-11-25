@@ -955,8 +955,7 @@ more padding on the right to avoid overlap
 
 /* focused and active state */
 
-.c-option--hidden:focus-visible + .c-custom-option,
-.c-option--hidden:active + .c-custom-option {
+.c-option--hidden:focus-visible + .c-custom-option {
     --custom-option-borderColor: var(--custom-option-focus-borderColor);
     --custom-option-boxShadow: var(--custom-option-focus-boxShadow);
 }
@@ -1038,8 +1037,7 @@ more padding on the right to avoid overlap
 
 /* focused and active state */
 
-.c-option--hidden:focus-visible + .c-custom-toggle,
-.c-option--hidden:active + .c-custom-toggle {
+.c-option--hidden:focus-visible + .c-custom-toggle {
     --toggle-borderColor: var(--toggle-focus-borderColor);
     --toggle-boxShadow: var(--toggle-focus-boxShadow);
 }
